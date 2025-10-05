@@ -76,6 +76,20 @@ const Projects = () => {
       demo: 'https://game-three-brown.vercel.app',
       date: 'Décembre 2024'
     },
+    {
+      title: 'Jeu de dames',
+      description: "Développement d’un jeu de dames avec interface graphique. Stack technique : Java Swing pour l’interface graphique, MySQL pour la base de données.",
+      technologies: ['Java', 'Swing', 'MySQL'],
+      images: [
+        process.env.PUBLIC_URL + '/DAME/WhatsApp Image 2025-10-05 at 11.26.06 PM.jpeg',
+        process.env.PUBLIC_URL + '/DAME/WhatsApp Image 2025-10-05 at 11.26.06 PM (1).jpeg',
+        process.env.PUBLIC_URL + '/DAME/WhatsApp Image 2025-10-05 at 11.26.06 PM (2).jpeg',
+        process.env.PUBLIC_URL + '/DAME/WhatsApp Image 2025-10-05 at 11.26.06 PM (3).jpeg',
+      ],
+      github: '#',
+      demo: '#',
+      date: 'Mai 2025'
+    },
   ];
 
   // Lightbox state for image zoom with navigation
