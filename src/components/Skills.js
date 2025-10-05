@@ -16,10 +16,9 @@ const Skills = () => {
       items: [
         { name: 'HTML/CSS', level: 90 },
         { name: 'JavaScript', level: 85 },
-        { name: 'TypeScript', level: 80 },
+        { name: 'TypeScript', level: 49 },
         { name: 'React.js', level: 85 },
-        { name: 'Angular', level: 75 },
-        { name: 'Material-UI', level: 80 },
+        { name: 'Angular', level: 70 },
       ],
     },
     {
@@ -29,40 +28,30 @@ const Skills = () => {
         { name: 'Node.js', level: 80 },
         { name: 'Java', level: 85 },
         { name: 'Spring Boot', level: 80 },
-        { name: 'PHP', level: 75 },
-        { name: 'Python', level: 70 },
-        { name: 'C#/.NET', level: 70 },
+        { name: 'PHP', level: 50 },
+        { name: 'Python', level: 50 },
+        { name: 'C#/.NET', level: 60 },
       ],
     },
     {
       category: 'Bases de Données',
       icon: <StorageIcon color="primary" fontSize="large" />,
       items: [
-        { name: 'MySQL', level: 85 },
-        { name: 'PostgreSQL', level: 80 },
+        { name: 'MySQL', level: 95 },
+        { name: 'PostgreSQL', level: 50 },
         { name: 'MongoDB', level: 75 },
-        { name: 'SQL Server', level: 70 },
-      ],
+       ],
     },
     {
       category: 'Mobile',
       icon: <PhoneAndroidIcon color="primary" fontSize="large" />,
       items: [
-        { name: 'Android (Java)', level: 75 },
-        { name: 'React Native', level: 70 },
+        { name: 'Android (Java)', level: 50 },
+        { name: 'flutter', level: 10 },
         { name: 'Material Design', level: 80 },
       ],
     },
-    {
-      category: 'UI/UX',
-      icon: <BrushIcon color="primary" fontSize="large" />,
-      items: [
-        { name: 'Figma', level: 80 },
-        { name: 'Adobe XD', level: 70 },
-        { name: 'Responsive Design', level: 85 },
-        { name: 'Wireframing', level: 75 },
-      ],
-    },
+
     {
       category: 'Outils & DevOps',
       icon: <SettingsIcon color="primary" fontSize="large" />,
@@ -78,9 +67,9 @@ const Skills = () => {
 
   const languages = [
     { name: 'Arabe', level: 100, levelText: 'Langue maternelle' },
-    { name: 'Français', level: 80, levelText: 'Niveau B2' },
+    { name: 'Français', level: 70, levelText: 'Niveau B1' },
     { name: 'Anglais', level: 75, levelText: 'Niveau B2' },
-    { name: 'Allemand', level: 50, levelText: 'Niveau B1' },
+    { name: 'Allemand', level: 60, levelText: 'Niveau B1' },
   ];
 
   const getColorForLevel = (level) => {
