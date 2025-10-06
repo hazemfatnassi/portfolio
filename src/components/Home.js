@@ -9,7 +9,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 // Profile photo from public folder
-const profileImageUrl = process.env.PUBLIC_URL + '/hazem Fatnassi cv.png';
+const profileImageUrl = process.env.PUBLIC_URL + '/hazemft.png';
 // CV PDF from public folder
 const cvUrl = process.env.PUBLIC_URL + '/CV hazem Fatnassi.pdf';
 
