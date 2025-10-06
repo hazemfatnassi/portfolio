@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Container, Grid, Button, Paper } from '@mui/material';
+import { Box, Typography, Container, Grid, Button, Paper, TextField, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -10,6 +10,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Contact = () => {
+  const [form, setForm] = React.useState({ name: '', email: '', message: '' });
 
   const contactInfo = [
     { icon: <EmailIcon color="primary" />, text: 'fatnassi.hazem2005@gmail.com', link: 'mailto:fatnassi.hazem2005@gmail.com' },
@@ -25,11 +26,18 @@ const Contact = () => {
     { icon: <EmailIcon />, label: 'Email', url: 'mailto:fatnassi.hazem2005@gmail.com' },
   ];
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Contact: ${form.name || ''}`);
+    const body = encodeURIComponent(`${form.message}\n\n— ${form.name}\n${form.email}`);
+    window.location.href = `mailto:fatnassi.hazem2005@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <Box id="contact" sx={{ py: 10, bgcolor: 'background.paper' }}>
+    <Box id="contact" sx={{ py: 10, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -40,114 +48,42 @@ const Contact = () => {
             align="center"
             sx={{
               mb: 6,
-              position: 'relative',
-              display: 'inline-block',
-              '&:after': {
-                content: '""',
-                position: 'absolute',
-                width: '60px',
-                height: '4px',
-                bottom: '-10px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                bgcolor: 'primary.main',
-                borderRadius: '2px',
-              },
+              fontWeight: 800,
+              background: 'linear-gradient(135deg, rgb(1, 42, 79) 0%, rgb(77, 49, 32) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
             }}
           >
-            Contactez-moi
+            Restons en contact
           </Typography>
         </motion.div>
 
-        <Grid container spacing={6}>
+        <Grid container spacing={4} alignItems="stretch">
           <Grid item xs={12} md={6}>
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
               <Paper
-                elevation={3}
+                elevation={4}
                 sx={{
-                  p: 4,
+                  p: { xs: 3, md: 4 },
+                  borderRadius: 3,
                   height: '100%',
-                  borderRadius: 2,
-                  background: 'linear-gradient(145deg, #f5f5f5 0%, #e0f2ff 100%)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 2.5,
+                  border: '1px solid',
+                  borderColor: 'divider',
                 }}
               >
-                <Typography variant="h5" component="h3" sx={{ mb: 3, fontWeight: 600, color: 'primary.main' }}>
-                  Mes Plateformes
-                </Typography>
-                
-                <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 1 }}>
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -5, scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      style={{ color: 'inherit' }}
-                    >
-                      <Box
-                        sx={{
-                          width: 56,
-                          height: 56,
-                          borderRadius: '50%',
-                          backgroundColor: 'white',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-                          color: 'primary.main',
-                          fontSize: '1.6rem',
-                          transition: 'all 0.3s ease',
-                          '&:hover': {
-                            backgroundColor: 'primary.main',
-                            color: 'white',
-                            transform: 'translateY(-5px)',
-                          },
-                        }}
-                      >
-                        {social.icon}
-                      </Box>
-                    </motion.a>
-                  ))}
-                </Box>
-
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  href="mailto:fatnassi.hazem2005@gmail.com"
-                  sx={{ mt: 2, borderRadius: '50px', px: 3, textTransform: 'none' }}
-                >
-                  Me contacter par email
-                </Button>
-              </Paper>
-            </motion.div>
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <Paper
-                elevation={3}
-                sx={{
-                  p: 4,
-                  borderRadius: 2,
-                }}
-              >
-                <Typography variant="h5" component="h3" sx={{ mb: 3, fontWeight: 600, color: 'primary.main' }}>
-                  Mes Coordonnées
+                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                  Coordonnées
                 </Typography>
 
-                <Box sx={{ mb: 2 }}>
+                <Box>
                   {contactInfo.map((info, index) => (
                     <Box
                       key={index}
@@ -158,13 +94,15 @@ const Contact = () => {
                       sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        mb: 2.5,
+                        mb: 2,
                         textDecoration: 'none',
                         color: 'inherit',
-                        transition: 'all 0.3s ease',
+                        p: 1,
+                        borderRadius: 2,
+                        transition: 'all 0.25s ease',
                         '&:hover': {
-                          color: 'primary.main',
-                          transform: 'translateX(5px)',
+                          backgroundColor: 'action.hover',
+                          transform: 'translateX(4px)',
                         },
                       }}
                     >
@@ -176,6 +114,53 @@ const Contact = () => {
                   ))}
                 </Box>
 
+                <Box sx={{ mt: 1 }}>
+                  <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
+                    Mes plateformes
+                  </Typography>
+                  <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
+                    {socialLinks.map((social, index) => (
+                      <motion.a
+                        key={index}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileTap={{ scale: 0.95 }}
+                        style={{ color: 'inherit' }}
+                      >
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 1,
+                            px: 1.5,
+                            py: 0.75,
+                            borderRadius: 2,
+                            bgcolor: 'action.selected',
+                            color: 'text.primary',
+                            '&:hover': { bgcolor: 'action.hover' },
+                          }}
+                        >
+                          {social.icon}
+                          <Typography variant="body2">{social.label}</Typography>
+                        </Box>
+                      </motion.a>
+                    ))}
+                  </Box>
+                </Box>
+
+                <Box
+                  sx={{
+                    mt: 'auto',
+                    p: 2,
+                    borderRadius: 2,
+                    background: 'linear-gradient(135deg, rgba(1, 42, 79, 0.08) 0%, rgba(77, 49, 32, 0.08) 100%)',
+                  }}
+                >
+                  <Typography variant="body2" color="text.secondary">
+                    Disponible pour des opportunités de stage, projets freelance, ou collaborations.
+                  </Typography>
+                </Box>
               </Paper>
             </motion.div>
           </Grid>

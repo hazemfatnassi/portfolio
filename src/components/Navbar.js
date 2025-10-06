@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Container, Box, IconButton, Drawer, List, ListItem, ListItemText, ListItemButton, useMediaQuery, useTheme } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -9,6 +9,11 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const appBarBg = scrolled ? 'rgba(77, 49, 32, 0.95)' : (isHome ? 'transparent' : 'white');
+  const navTextColor = scrolled ? 'white' : (isHome ? 'white' : 'text.primary');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +69,7 @@ const Navbar = () => {
     <AppBar 
       position="fixed" 
       sx={{
-        backgroundColor: scrolled ? 'rgba(30, 136, 229, 0.95)' : 'transparent',
+        backgroundColor: appBarBg,
         boxShadow: scrolled ? 3 : 'none',
         transition: 'all 0.3s ease-in-out',
         backdropFilter: scrolled ? 'blur(10px)' : 'none',
@@ -84,7 +89,7 @@ const Navbar = () => {
                 flexGrow: 1,
                 fontWeight: 700,
                 letterSpacing: '.1rem',
-                color: 'white',
+                color: navTextColor,
                 textDecoration: 'none',
               }}
             >
@@ -94,11 +99,10 @@ const Navbar = () => {
 
           {isMobile ? (
             <IconButton
-              color="inherit"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ ml: 'auto' }}
+              sx={{ ml: 'auto', color: navTextColor }}
             >
               <MenuIcon />
             </IconButton>
@@ -118,12 +122,12 @@ const Navbar = () => {
                     {({ isActive }) => (
                       <Button
                         sx={{
-                          color: 'white',
+                          color: navTextColor,
                           mx: 1,
-                          borderBottom: isActive ? '2px solid white' : '2px solid transparent',
+                          borderBottom: isActive ? `2px solid ${scrolled || isHome ? '#fff' : 'currentColor'}` : '2px solid transparent',
                           borderRadius: 0,
                           '&:hover': {
-                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                            backgroundColor: scrolled || isHome ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0,0,0,0.06)',
                           },
                         }}
                       >

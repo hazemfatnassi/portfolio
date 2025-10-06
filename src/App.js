@@ -13,13 +13,13 @@ import './App.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1e88e5',
+      main: 'rgb(1, 42, 79)', // dark blue
     },
     secondary: {
-      main: '#ff4081',
+      main: 'rgb(77, 49, 32)', // brown
     },
     background: {
-      default: '#f5f5f5',
+      default: '#FAF7F2', // light beige background
       paper: '#ffffff',
     },
   },

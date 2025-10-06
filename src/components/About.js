@@ -102,7 +102,7 @@ const About = () => {
                   borderRadius: 3,
                   position: 'relative',
                   overflow: 'hidden',
-                  background: 'linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%)',
+                  background: 'linear-gradient(180deg, #ffffff 0%, #f7f2ec 100%)',
                   boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
                   '&:before': {
                     content: '""',
@@ -124,7 +124,7 @@ const About = () => {
                     mb: 2,
                     border: '4px solid',
                     borderColor: 'primary.main',
-                    boxShadow: '0 8px 24px rgba(30,136,229,0.25)'
+                    boxShadow: '0 8px 24px rgba(109,76,65,0.25)'
                   }}
                 />
                 <Typography variant="h5" component="h3" gutterBottom sx={{ fontWeight: 700 }}>

@@ -75,7 +75,7 @@ const Footer = () => {
                         color: 'text.secondary',
                         '&:hover': {
                           color: 'primary.main',
-                          backgroundColor: 'rgba(30, 136, 229, 0.1)',
+                          backgroundColor: 'rgba(109, 76, 65, 0.12)',
                         },
                       }}
                     >
@@ -198,7 +198,7 @@ const Footer = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 4px 20px rgba(30, 136, 229, 0.3)',
+            boxShadow: '0 4px 20px rgba(109, 76, 65, 0.3)',
             transition: 'all 0.3s ease',
             '&:hover': {
               backgroundColor: 'primary.dark',

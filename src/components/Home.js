@@ -24,7 +24,7 @@ const Home = () => {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: 'linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%)',
+        background: 'linear-gradient(135deg,rgb(1, 42, 79) 0%,rgb(77, 49, 32) 100%)', // brown gradient
         color: 'white',
         position: 'relative',
         overflow: 'hidden',
@@ -62,12 +62,23 @@ const Home = () => {
                 component="span"
                 sx={{
                   display: 'block',
-                  color: 'secondary.main',
                   fontWeight: 800,
                   mt: 1,
                 }}
               >
-                Hazem Fatnassi
+                <motion.span
+                  style={{
+                    display: 'inline-block',
+                    backgroundImage: 'linear-gradient(135deg, rgb(84, 169, 229), rgb(151, 107, 51))',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundSize: '200% 200%',
+                  }}
+                  animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  Hazem Fatnassi
+                </motion.span>
               </Typography>
             </Typography>
 
@@ -82,7 +93,7 @@ const Home = () => {
               }}
             >
               Étudiant en Technologie de l'Informatique, spécialisé en Développement des Systèmes d'Information.
-              Passionné par la création de solutions numériques innovantes.
+              Je conçois des interfaces modernes et des API robustes, avec une attention particulière à la qualité, aux performances et à l'expérience utilisateur.
             </Typography>
 
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
@@ -120,7 +131,7 @@ const Home = () => {
                   borderWidth: '2px',
                   '&:hover': {
                     borderWidth: '2px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
                   },
                 }}
               >
@@ -142,7 +153,7 @@ const Home = () => {
                   borderWidth: '2px',
                   '&:hover': {
                     borderWidth: '2px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
                   },
                 }}
               >
@@ -157,7 +168,7 @@ const Home = () => {
                 { label: 'Facebook', url: 'https://www.facebook.com/hazem.fatnassi.14', Icon: FacebookIcon },
                 { label: 'WhatsApp', url: 'https://wa.me/21650210243', Icon: WhatsAppIcon },
                 { label: 'Email', url: 'mailto:fatnassi.hazem2005@gmail.com', Icon: EmailIcon },
-              ].map(({ label, url, Icon }, idx) => (
+              ].map(({ label, url, Icon }) => (
                 <motion.div key={label} whileHover={{ y: -4 }} whileTap={{ scale: 0.95 }}>
                   <Tooltip title={label} placement="top">
                     <IconButton
@@ -236,7 +247,7 @@ const Home = () => {
                 width: '100px',
                 height: '100px',
                 borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-                background: 'linear-gradient(45deg, #ff4081, #7c4dff)',
+                background: 'linear-gradient(45deg, #D7CCC8, #8D6E63)',
                 zIndex: -1,
                 filter: 'blur(1px)',
               }}
@@ -245,32 +256,32 @@ const Home = () => {
         </Box>
       </Container>
 
-      {/* Animated background elements */}
-      {[...Array(10)].map((_, i) => (
-        <motion.div
-          key={i}
-          animate={{
-            y: [0, 20, 0],
-            x: [0, Math.random() * 40 - 20, 0],
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 10 + Math.random() * 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          style={{
-            position: 'absolute',
-            width: Math.random() * 20 + 10,
-            height: Math.random() * 20 + 10,
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            borderRadius: '50%',
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            zIndex: 0,
-          }}
-        />
-      ))}
+        {/* Animated background elements */}
+        {[...Array(10)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [0, 20, 0],
+              x: [0, Math.random() * 40 - 20, 0],
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 10 + Math.random() * 10,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            style={{
+              position: 'absolute',
+              width: Math.random() * 20 + 10,
+              height: Math.random() * 20 + 10,
+              backgroundColor: 'rgba(215, 204, 200, 0.22)', // soft beige particles
+              borderRadius: '50%',
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              zIndex: 0,
+            }}
+          />
+        ))}
     </Box>
   );
 };
