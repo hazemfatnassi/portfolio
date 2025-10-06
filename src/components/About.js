@@ -11,7 +11,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 const profileImageUrl = process.env.PUBLIC_URL + '/ft.jpg';
 
 const About = () => {
-  const cvUrl = process.env.PUBLIC_URL + '/CV hazem Fatnassi.pdf';
+  const cvUrl = process.env.PUBLIC_URL + '/CV Hazem fatnassi .pdf';
   const infoItems = [
     { icon: <LocationOnIcon color="primary" />, text: 'Ezzahra, 5199 Mahdia, Tunisie' },
     { icon: <EmailIcon color="primary" />, text: 'fatnassi.hazem2005@gmail.com' },

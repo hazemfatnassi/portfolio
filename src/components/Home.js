@@ -11,7 +11,7 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 // Profile photo from public folder
 const profileImageUrl = process.env.PUBLIC_URL + '/hazemft.png';
 // CV PDF from public folder
-const cvUrl = process.env.PUBLIC_URL + '/CV hazem Fatnassi.pdf';
+const cvUrl = process.env.PUBLIC_URL + '/CV Hazem fatnassi .pdf';
 
 const Home = () => {
   const theme = useTheme();
