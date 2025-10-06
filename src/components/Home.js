@@ -35,7 +35,7 @@ const Home = () => {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
+            flexDirection: isMobile ? 'column-reverse' : 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: 4,
@@ -45,7 +45,7 @@ const Home = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ zIndex: 1 }}
+            style={{ zIndex: 1, marginTop: isMobile ? '3rem' : 0 }}
           >
             <Typography
               variant="h4"
@@ -202,7 +202,7 @@ const Home = () => {
             style={{
               position: 'relative',
               zIndex: 1,
-              marginTop: isMobile ? '3rem' : 0,
+              marginTop: 0,
             }}
           >
             <Box
