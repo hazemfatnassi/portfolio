@@ -28,7 +28,7 @@ const About = () => {
     {
       year: '2023',
       degree: 'Baccalauréat',
-      institution: 'Lycée Secondaire Ezzahra',
+      institution: 'Lycée Secondaire taher sfar mahdia',
       description: 'Sciences Expérimentales',
     },
   ];

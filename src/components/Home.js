@@ -93,7 +93,6 @@ const Home = () => {
               }}
             >
               Étudiant en Technologie de l'Informatique, spécialisé en Développement des Systèmes d'Information.
-              Je conçois des interfaces modernes et des API robustes, avec une attention particulière à la qualité, aux performances et à l'expérience utilisateur.
             </Typography>
 
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
