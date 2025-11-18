@@ -60,7 +60,6 @@ const Skills = () => {
         { name: 'Docker', level: 70 },
         { name: 'Jira', level: 80 },
         { name: 'Postman', level: 85 },
-        { name: 'VS Code', level: 90 },
       ],
     },
   ];
